@@ -7,17 +7,13 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
-import AllUsers from "./pages/AllUsers";
-import Profile from "./pages/Profile";
+import Watchlist from "./pages/Watchlist";
 import Signup from "./pages/Signup";
-// import Home from "./pages/Home";
 import HomeArticles from "./pages/HomeArticles";
 
 const httpLink = createHttpLink({
@@ -49,8 +45,7 @@ function App() {
               <Route exact path="/" component={HomeArticles} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/profile/:_id?" component={Profile} />
-              <Route exact path="/allusers" component={AllUsers} />
+              <Route exact path="/watchlist/:_id?" component={Watchlist} />
               <Route component={NoMatch} />
             </Switch>
           <Footer />

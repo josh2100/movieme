@@ -19,10 +19,6 @@ const AllUsers = () => {
       },
     });
 
-    // if (error) {
-    //     throw error
-    // }
-
     console.log("Success!");
   };
 

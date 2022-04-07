@@ -1,7 +1,5 @@
-// import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
-import dateBuilder from "../../utils/dateBuilder";
 
 const Header = () => {
   const logout = (event) => {
@@ -17,15 +15,10 @@ const Header = () => {
       <nav className=" col-10 d-flex justify-content-end">
         {Auth.loggedIn() ? (
           <>
-            <button className="m-1 pageLinks">
-              <Link className="pageLinks" to="/allusers">
-                All Users
-              </Link>
-            </button>
 
             <button className="m-1 pageLinks">
-              <Link className="pageLinks" to="/profile">
-                Profile
+              <Link className="pageLinks" to="/watchlist">
+                Watchlist
               </Link>
             </button>
 
