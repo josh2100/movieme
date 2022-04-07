@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="row">
       <div className="col-2">
-        <strong>{dateBuilder(0)}</strong>
+        <strong> </strong>
       </div>
       <nav className=" col-10 d-flex justify-content-end">
         {Auth.loggedIn() ? (
@@ -53,13 +53,10 @@ const Header = () => {
       </nav>
 
       <Link to="/" className="offset-4 col-4">
-        <h1 className="mainHeader oldFont col-12 d-flex justify-content-center">
-          <strong>Joy News</strong>
+        <h1 className="mainHeader col-12 d-flex justify-content-center">
+          <strong>MOVIE ME!</strong>
         </h1>
       </Link>
-      <div className="col-12 d-flex justify-content-center">
-        ________________________________________________________________________________________________________________
-      </div>
       <div className="col-12 d-flex justify-content-center">
         ________________________________________________________________________________________________________________
       </div>
