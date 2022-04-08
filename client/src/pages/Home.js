@@ -4,9 +4,9 @@ import { Redirect, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { SAVE_ARTICLE } from "../utils/mutations";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-import { newsArticles } from "../utils/API";
+import { movieSearch } from "../utils/API";
 
-function HomeArticles() {
+const Home = () => {
   // Check if logged in true or false with Auth.loggedIn();
   const { username: userParam } = useParams();
 
@@ -15,15 +15,15 @@ function HomeArticles() {
   });
 
   const user = data?.me || data?.user || {};
-
-  // Use this to test if .env works console.log("process.env",process.env);
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [articles, setArticles] = useState([]);
   const [saveArticle] = useMutation(SAVE_ARTICLE);
 
-  const handleSaveArticle = async (element) => {
+  const handleSearch = (genre) => {
+    console.log(genre);
+    movieSearch();
+  }
 
+  const handleSaveArticle = async (element) => {
     saveArticle({
       variables: {
         title: element.title,
@@ -35,12 +35,13 @@ function HomeArticles() {
     });
   };
 
-    return (
-      <main className="row justify-content-evenly">
-       <p>click a genre</p>
-      </main>
-    );
-  
-}
+  return (
+    <main className="row justify-content-evenly">
+      <p>click a genre</p>
+      <button className="col-2"
+      onClick={()=>{handleSearch("random")}}>Random</button>
+    </main>
+  );
+};
 
-export default HomeArticles;
+export default Home;
