@@ -15,32 +15,7 @@ const Home = () => {
   });
 
   const user = data?.me || data?.user || {};
-  const [movies, setMovies] = useState([
-    // {
-    //   title: "Star Wars: Episode IV - A New Hope",
-    //   Year: "1977",
-    //   imdbID: "tt0076759",
-    //   Type: "movie",
-    //   Poster:
-    //     "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    // },
-    // {
-    //   title: "Star Wars: Episode V - The Empire Strikes Back",
-    //   Year: "1980",
-    //   imdbID: "tt0080684",
-    //   Type: "movie",
-    //   Poster:
-    //     "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-    // },
-    // {
-    //   title: "Star Wars: Episode VI - Return of the Jedi",
-    //   Year: "1983",
-    //   imdbID: "tt0086190",
-    //   Type: "movie",
-    //   Poster:
-    //     "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-    // },
-  ]);
+  const [movies, setMovies] = useState([]);
   const [saveArticle] = useMutation(SAVE_ARTICLE);
 
   const handleSearch = async (genre) => {
@@ -48,7 +23,6 @@ const Home = () => {
       console.log(genre);
       const data = await movieSearchByQuery(genre);
       setMovies(data);
-      // setMovies(data);
       console.log("movies:", movies);
     } catch (error) {
       throw error;
@@ -71,17 +45,29 @@ const Home = () => {
     <main className="row justify-content-evenly">
       <p>click a genre</p>
       <button
-        className="col-2"
+        className="col-2 m-1 pageLinks"
         onClick={() => {
           handleSearch("action");
         }}
       >
-        Random
+        Action
       </button>
+
+      <button
+        className="col-2 m-1 pageLinks"
+        onClick={() => {
+          handleSearch("comedy");
+        }}
+      >
+        Comedy
+      </button>
+
       <div className="">
         {movies.map((movie) => (
           <div key={movie.id} className="card">
-            movie<p>{movie.title}</p>
+            <p>Title: {movie.title}</p>
+            <p>Overview: {movie.overview}</p>
+            <img alt="" src={movie.poster_path}></img>
           </div>
         ))}
       </div>

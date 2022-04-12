@@ -37,7 +37,7 @@ a {
 .pageLinks:hover {
   text-decoration: none;
   color: black;
-  background-color: yellowgreen;
+  background-color: red;
 }
 
 main {
