@@ -17,6 +17,15 @@ const Home = () => {
   const user = data?.me || data?.user || {};
   const [movies, setMovies] = useState([]);
   const [saveArticle] = useMutation(SAVE_ARTICLE);
+  const genres = [
+    "action",
+    "comedy",
+    "drama",
+    "fantasy",
+    "horror",
+    "mystery",
+    "romance",
+  ];
 
   const handleSearch = async (genre) => {
     try {
@@ -43,24 +52,20 @@ const Home = () => {
 
   return (
     <main className="row justify-content-evenly">
-      <p>click a genre</p>
-      <button
-        className="col-2 m-1 pageLinks"
-        onClick={() => {
-          handleSearch("action");
-        }}
-      >
-        Action
-      </button>
+      <p className="col-12 d-flex justify-content-center">Click a genre and enjoy!</p>
 
-      <button
-        className="col-2 m-1 pageLinks"
-        onClick={() => {
-          handleSearch("comedy");
-        }}
-      >
-        Comedy
-      </button>
+      <div className="row d-flex justify-content-center">
+        {genres.map((genre) => (
+          <button
+            className="col-3 col-sm-2 col-lg-1 m-1 pageLinks"
+            onClick={() => {
+              handleSearch(genre);
+            }}
+          >
+            {genre}
+          </button>
+        ))}
+      </div>
 
       <div className="row">
         {movies.map((movie) => (
@@ -68,7 +73,10 @@ const Home = () => {
             <p>Movie ID: {movie.id}</p>
             <p>Title: {movie.title}</p>
             <p>Overview: {movie.overview}</p>
-            <img alt="" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
+            <img
+              alt=""
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            ></img>
           </div>
         ))}
       </div>
