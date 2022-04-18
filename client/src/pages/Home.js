@@ -62,12 +62,13 @@ const Home = () => {
         Comedy
       </button>
 
-      <div className="">
+      <div className="row">
         {movies.map((movie) => (
-          <div key={movie.id} className="card">
+          <div key={movie.id} className="card col-12 col-sm-3 ">
+            <p>Movie ID: {movie.id}</p>
             <p>Title: {movie.title}</p>
             <p>Overview: {movie.overview}</p>
-            <img alt="" src={movie.poster_path}></img>
+            <img alt="" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}></img>
           </div>
         ))}
       </div>

@@ -1,4 +1,6 @@
-# movieme
+# Movie Me!
+This is a work in progress, I am rebuilding my original group project at https://josh2100.github.io/movie-me/ into a MERN stack application. 
+
 MERN Stack Application for movie recommendations
 
 Deployment: deployment here
