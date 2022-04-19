@@ -50,9 +50,7 @@ const Header = () => {
           <strong>MOVIE ME!</strong>
         </h1>
       </Link>
-      <div className="col-12 d-flex justify-content-center">
-        ________________________________________________________________________________________________________________
-      </div>
+
     </header>
   );
 };

@@ -5,8 +5,6 @@ type User {
     _id: ID
     username: String
     email: String
-    articles: [Article]
-    friends: [User]
 }
 
 type Query {
@@ -50,22 +48,3 @@ type Auth {
 
 `;
 module.exports = typeDefs;
-
-// savedArticle(article: savedArticleInput): User
-
-// input savedArticleInput {
-//   content:String
-//   description: String
-//   image: String
-//   url: String
-//   title: String
-// }
-
-// type Mutation {
-//   login(email: String!, password: String!): Auth
-//   addUser(username: String!, email: String!, password: String!): Auth
-//   addFriend(friendsId: ID!): User
-//   savedArticle(content: String!, description: String!): Article
-//   deleteArticle(articleId: ID!): Article 
-//   addComment(articleId: ID!, commentText: String!): Article
-// }

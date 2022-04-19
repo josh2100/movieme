@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const articleSchema = require("./Article");
 
 const userSchema = new Schema(
   {
@@ -20,19 +19,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       minlength: 5,
-    },
-    articles: [
-      {
-        type: Schema.Types.ObjectId, 
-        ref: "Article"
-      }
-    ],
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-      },
-    ],
+    }
   },
   {
     toJSON: {

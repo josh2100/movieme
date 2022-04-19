@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Auth from "../utils/auth";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
-import { SAVE_ARTICLE } from "../utils/mutations";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { movieSearch, movieSearchByQuery } from "../utils/API";
 
@@ -16,7 +15,6 @@ const Home = () => {
 
   const user = data?.me || data?.user || {};
   const [movies, setMovies] = useState([]);
-  const [saveArticle] = useMutation(SAVE_ARTICLE);
   const genres = [
     "action",
     "comedy",
@@ -38,18 +36,6 @@ const Home = () => {
     }
   };
 
-  const handleSaveArticle = async (element) => {
-    saveArticle({
-      variables: {
-        title: element.title,
-        content: element.content,
-        description: element.description,
-        image: element.image,
-        url: element.url,
-      },
-    });
-  };
-
   return (
     <main className="row justify-content-evenly">
       <p className="col-12 d-flex justify-content-center">Click a genre and enjoy!</p>
@@ -57,7 +43,7 @@ const Home = () => {
       <div className="row d-flex justify-content-center">
         {genres.map((genre) => (
           <button
-            className="col-3 col-sm-2 col-lg-1 m-1 pageLinks"
+            className="col-3 col-sm-2 col-lg-1 m-1 pageLinks shadow"
             onClick={() => {
               handleSearch(genre);
             }}
@@ -67,11 +53,10 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="row">
+      <div className="row ms-5 me-5 mt-5 d-flex justify-content-center">
         {movies.map((movie) => (
-          <div key={movie.id} className="card col-12 col-sm-3 ">
-            <p>Movie ID: {movie.id}</p>
-            <p>Title: {movie.title}</p>
+          <div key={movie.id} className="card col-12 col-sm-3 m-3 shadow-lg">
+            <p><strong>{movie.title}</strong></p>
             <p>Overview: {movie.overview}</p>
             <img
               alt=""
