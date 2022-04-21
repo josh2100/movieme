@@ -39,7 +39,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="container-fluid d-flex flex-column min-vh-100">
+        <div className="container-fluid d-flex flex-column min-vh-100 teal">
           <Header />
             <Switch>
               <Route exact path="/" component={Home} />

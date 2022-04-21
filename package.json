@@ -1,4 +1,5 @@
 {
+  "homepage": "http://josh2100.github.io/movieme",
   "name": "movieme",
   "version": "1.0.0",
   "description": "",
@@ -8,7 +9,9 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -20,9 +23,9 @@
   "bugs": {
     "url": "git+https://github.com/josh2100/movieme.git"
   },
-  "homepage": "https://github.com/josh2100/movieme#readme",
   "devDependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "gh-pages": "^3.2.3"
   },
   "dependencies": {
     "dotenv": "^16.0.0"

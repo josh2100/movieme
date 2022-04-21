@@ -8,8 +8,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sanddollar {
+  background-color: #e5ddc8;
+}
+
+.teal {
+  background-color: #01949a;
+}
+
+.navyblue {
+  background-color: #004369;
+}
+
+.red {
+  background-color:#DB1F48;
+}
+
 button {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 7px !important;
 }
 

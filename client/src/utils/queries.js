@@ -46,16 +46,6 @@ export const QUERY_ALL_USERS = gql`
   }
 `;
 
-// export const QUERY_USER = gql`
-//   query user($username: String!) {
-//     user(username: $username) {
-//       _id
-//       username
-//       email
-//     }
-//   }
-// `;
-
 export const QUERY_USER = gql`
   query user($_id: ID!) {
     user(_id: $_id) {

@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="row">
-      <div className="col-2">
+      {/* <div className="col-2">
         <strong> </strong>
       </div>
       <nav className=" col-10 d-flex justify-content-end">
@@ -43,7 +43,7 @@ const Header = () => {
             </button>
           </>
         )}
-      </nav>
+      </nav> */}
 
       <Link to="/" className="offset-4 col-4">
         <h1 className="mainHeader col-12 d-flex justify-content-center">

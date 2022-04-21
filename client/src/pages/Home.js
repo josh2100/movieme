@@ -43,7 +43,7 @@ const Home = () => {
       <div className="row d-flex justify-content-center">
         {genres.map((genre) => (
           <button
-            className="col-3 col-sm-2 col-lg-1 m-1 pageLinks shadow"
+            className="col-3 col-sm-2 col-lg-1 m-1 pageLinks shadow red"
             onClick={() => {
               handleSearch(genre);
             }}
