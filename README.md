@@ -3,7 +3,7 @@ This is a work in progress, I am rebuilding my original group project at https:/
 
 MERN Stack Application for movie recommendations
 
-Deployment: deployment here
+Deployment: https://movieme2.herokuapp.com/
 
 ![Movie Me Screenshot](./client/public/screenshot.png)
 

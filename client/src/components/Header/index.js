@@ -47,7 +47,7 @@ const Header = () => {
 
       <Link to="/" className="offset-4 col-4">
         <h1 className="mainHeader col-12 d-flex justify-content-center">
-          <strong>MOVIE ME!</strong>
+          <strong className="">MOVIE ME!</strong>
         </h1>
       </Link>
 

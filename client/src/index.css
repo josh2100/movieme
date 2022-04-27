@@ -25,7 +25,6 @@ body {
 }
 
 button {
-  /* background-color: white; */
   border-radius: 7px !important;
 }
 
@@ -34,15 +33,11 @@ a {
   color: black;
 }
 
-.oldFont {
-  font-family: "Monsieur La Doulaise", cursive;
-  text-decoration: none;
-  color: black;
-}
 
 .mainHeader {
   text-decoration: none;
-  color: black;
+  color: #DB1F48;
+  text-shadow: 2px 2px black;
 }
 
 .pageLinks {
